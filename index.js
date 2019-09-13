@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 const data = ("/data.json")
 
@@ -14,13 +15,17 @@ const completedTasks = [
 ];
 
 // Homepage
-app.get("/", (req,res) =>{
+app.get("/completedTasks", (req,res) =>{
     res.write ('Homepage of ToDo App');
-    res.write("\nThe Completed tasks listed below \n");
-    res.write(completedTasks);
-    res.end()
+    res.write("\nThe Completed tasks listed below: \n");
+    res.send(completedTasks.map(iterable => {
+        iterable.task;
+    }).join('')
+    )
+    // res.end()
 });
 
 // Unsure How to assign a new port Number
 // Also how to change the message from Listening on Port 3000 to newly updated port
+
 app.listen(port, ()=> console.log(`Listening on Port ${port}`));
