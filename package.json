@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/A04236718/ToDoApp/issues"
   },
-  "homepage": "https://github.com/A04236718/ToDoApp#readme"
+  "homepage": "https://github.com/A04236718/ToDoApp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
 }
